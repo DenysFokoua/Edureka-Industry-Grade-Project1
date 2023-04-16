@@ -1,0 +1,16 @@
+
+---
+- hosts: localhost
+  become: yes
+  gather_facts: no
+    #  args:
+    # dir: opt/docker
+  tasks:
+    - name: Create docker image using war file
+      command: 'docker build -t denysfokoua/abc_kubernetes_v:1.1 .'
+     # let's add code to run a container
+    - name: Push Docker Image to Dockerhub
+      command: 'docker push  denysfokoua/abc_kubernetes_v: 1.1'
+    - name: Removing image from ansible workspace
+      command: 'docker rmi denysfokoua/abc_kubernetes_v:1.1'
+      ignore_errors: yes
