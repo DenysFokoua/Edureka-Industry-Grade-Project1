@@ -2,8 +2,8 @@
 - hosts: localhost
   become: yes
   gather_facts: no
-    #  args:
-    # dir: opt/docker
+      args:
+      dir: opt/docker
   tasks:
     - name: Create docker image using war file
       command: 'docker build -t denysfokoua/abc_kubernetes_v:1.1 .'
