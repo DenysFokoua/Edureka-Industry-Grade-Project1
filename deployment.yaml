@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: abc-echnologies
+  labels:
+    app: abc-tech-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: abc-tech-app
+  template:
+    metadata:
+      labels:
+        app: abc-tech-app
+    spec:
+      containers:
+      - name: abc-tech-container
+        image: denysfokoua/abc_kubernetes_v.1.1
+        ports:
+        - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: abc-tech-service
+  labels:
+    app: abc-tech-app
+spec:
+  selector:
+    app: abc-tech-app
+
+  type: NodePort
+  ports:
+  - nodePort: 25052
+    port: 8080
+    targetPort: 8080
