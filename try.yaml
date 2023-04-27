@@ -2,7 +2,7 @@
 - name: Create pods using deployment
   hosts: Kube_Master
     # become: true
-    tasks:
+  tasks:
   - name: create a deployment
     command: “kubectl –kubeconfig=/etc/kubernetes/admin.conf apply -f /opt/abc_technologies/deployment.yaml”
 
