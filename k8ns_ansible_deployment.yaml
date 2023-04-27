@@ -4,4 +4,4 @@
     # become: true
   tasks:
   - name: create a deployment
-    command: command: “kubectl --kubeconfig=/etc/kubernetes/admin.conf apply -f /opt/abc_technologies/deployment.yaml”
+    command: “kubectl --kubeconfig=/etc/kubernetes/admin.conf apply -f /opt/abc_technologies/deployment.yaml”
