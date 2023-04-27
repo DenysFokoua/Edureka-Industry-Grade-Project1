@@ -1,6 +1,6 @@
 ---
 - name: Create pods using deployment
-  hosts: Kube_Master
+  hosts: Kubernetes_Master
     # become: true
   tasks:
   - name: create a deployment
